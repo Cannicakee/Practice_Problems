@@ -17,14 +17,18 @@
 */
 
 const bestStudent = (...args) => {
-    if(args === undefined) {
+    if(args.length === 0) {
         return null;
     }
-    let max = 0;
+    let maxName = args[0].name;
+    let maxPoints = args[0].points;
     for(let key of args) {
-        if(key.points > max)
-        max = key.points
+        if(key.points > maxPoints) {
+            maxName = key.name;
+            maxPoints = key.points;
+        }
     }
+    return maxName;
 }
 
 const student1 = { name: "Geoff", points: 50 };
