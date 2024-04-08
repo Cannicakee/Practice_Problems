@@ -10,10 +10,23 @@
 */
 
 function characterCount(string) {
-  // Your code here 
+    let letterCount = {};
+    let char = string.split('')
+    for (let el of char) {
+        if (letterCount[el] === undefined) {
+            letterCount[el] = 1;
+        } else {
+            if (letterCount[el] !== undefined) {
+                letterCount[el]++;
+            }
+        }
+    }
+    return letterCount;
 }
 
-
+console.log(characterCount('mississippi')); // prints {m: 1, i: 4, s: 4, p: 2}
+console.log(characterCount('cat')); // prints {c: 1, a: 1, t: 1}
+console.log(characterCount('What time is it?')); // prints {W: 1, h: 1, a: 1, t: 3, ' ': 3, i: 3, m: 1, e: 1, s: 1, '?': 1}
 /**************DO NOT MODIFY ANYTHING UNDER THIS  LINE*****************/
 
 try {
