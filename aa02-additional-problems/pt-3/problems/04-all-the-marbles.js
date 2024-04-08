@@ -14,9 +14,22 @@ All the marbles:
 */
 
 function allTheMarbles(...marbles) {
-  // Your code here 
+    let total = 0;
+    for (let key in marbles) {
+        let values = marbles[key]
+        let weight = values.weight;
+        total += weight;
+    }
+    return total;
 }
 
+const marble1 = { color: 'red', weight: 20 };
+const marble2 = { color: 'purple', weight: 100 };
+const marble3 = { color: 'blue', weight: 40 };
+
+console.log(allTheMarbles(marble1, marble2)) // prints 120;
+console.log(allTheMarbles(marble1, marble2, marble3)) // prints 160;
+console.log(allTheMarbles()) // prints 0;
 /**************DO NOT MODIFY ANYTHING UNDER THIS  LINE*****************/
 
 try {
