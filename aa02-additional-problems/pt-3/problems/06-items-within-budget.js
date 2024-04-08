@@ -19,11 +19,29 @@
 */
 
 const itemsWithinBudget = (budget, items) => {
-    // Your code here 
+    // let filteredItems = items.filter(item => item.price <= budget)
+    // return filteredItems.map(element => element.name)
+    let arr = []
+    for (let item of items) {
+        if (item.price <= budget) {
+            arr.push(item.name);
+        }
+    }
+    return arr;
 }
 
+const items1 = [{ name: 'iPhone', price: 700 },
+{ name: 'laptop', price: 2000 },
+{ name: 'guitar', price: 300 },
+{ name: 'camera', price: 1200 }
+]
+const items2 = [{ name: 'online classes', price: 1000 },
+{ name: 'omakase bento box', price: 100 },
+{ name: 'medicine', price: 50 }
+]
 
-
+console.log(itemsWithinBudget(1000, items1)) // prints ['iPhone', 'guitar'] 
+console.log(itemsWithinBudget(200, items2)) // prints ['omakase bento box', 'medicine']
 /**************DO NOT MODIFY ANYTHING UNDER THIS  LINE*****************/
 try {
     module.exports = itemsWithinBudget;
